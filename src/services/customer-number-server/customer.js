@@ -14,10 +14,22 @@ const customer2 = {
     customerNumber: "K0002"
 }
 
+const customers = [{customer1}, {customer2}];
+
 function printCustomers()
 {
-    const customers = [{customer1}, {customer2}];
     return customers;
 }
 
-export {printCustomers};
+function createCustomer(name, age, email, phoneNumber, customerNumber) {
+    const newCustomer = {
+        name: name,
+        age: age,
+        email: email,
+        phoneNumber: phoneNumber,
+        customerNumber: customerNumber
+};
+    //customers.push(newCustomer);
+    return newCustomer;
+}
+export {printCustomers, createCustomer};
