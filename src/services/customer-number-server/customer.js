@@ -14,9 +14,9 @@ const customer2 = {
     customerNumber: "K0002"
 }
 
-const customers = [{customer1}, {customer2}];
-function printCustomers(customers)
+function printCustomers()
 {
+    const customers = [{customer1}, {customer2}];
     return customers;
 }
 
