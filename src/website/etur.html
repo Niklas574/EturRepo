@@ -33,14 +33,21 @@
               </tbody>
         </table>
 
-        <form id="myForm">
+        <form id="addCustomerForm">
           <label for="customerName">Name:</label>
           <input type="text" id="customerName" name="customerName" required>
     
-          <label for="customerNumber">Kundennumber:</label>
+          <label for="customerNumber">Kundennummer:</label>
           <input type="text" id="customerNumber" name="customerNumber" required>
     
-          <button onclick="alert('Customer added.')">Add Customer</button>
+          <button onclick="alert('Kunde hinzugefügt.')">Hinzufügen</button>
+        </form>
+
+        <form id="checkCustomerNumberForm">
+          <label for="customerNumber">Kundennummer:</label>
+          <input type="text" id="customerNumber" name="customerNumber" required>
+    
+          <button onclick="alert('Suchen')">Suchen</button>
         </form>
         
       </div>
