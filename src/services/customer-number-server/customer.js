@@ -15,8 +15,10 @@ const customer2 = {
 }
 
 const customers = [{customer1}, {customer2}];
-function print(customers)
+function printCustomers(customers)
 {
-    console.log(customers);
+    return customers;
 }
-print(customers);
+printCustomers(customers);
+
+export {printCustomers};
