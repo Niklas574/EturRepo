@@ -14,7 +14,7 @@ const customer2 = {
     customerNumber: "K0002"
 }
 
-const customers = [{customer1}, {customer2}];
+const customers = [customer1, customer2];
 
 function printCustomers()
 {
@@ -29,7 +29,6 @@ function createCustomer(name, age, email, phoneNumber, customerNumber) {
         phoneNumber: phoneNumber,
         customerNumber: customerNumber
 };
-    //customers.push(newCustomer);
-    return newCustomer;
+    customers.push(newCustomer);
 }
 export {printCustomers, createCustomer};
