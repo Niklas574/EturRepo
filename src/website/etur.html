@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -8,7 +9,6 @@
   <body>
     <div id="section1">
         <h2>Customers</h2>
-        <p>This is the content of section 1.</p>
 
         <table>
             <thead>
@@ -32,22 +32,19 @@
                 </tr>
               </tbody>
         </table>
+
+        <form id="myForm">
+          <label for="customerName">Name:</label>
+          <input type="text" id="customerName" name="customerName" required>
+    
+          <label for="customerNumber">Kundennumber:</label>
+          <input type="text" id="customerNumber" name="customerNumber" required>
+    
+          <button onclick="alert('Customer added.')">Add Customer</button>
+        </form>
         
-        <button onclick="alert('Button clicked!')">Add Customer</button>
       </div>
     
 
-    <h2>All Machines</h2>
-    <ul>
-      <li>
-        Machine 1 <span>Status: <strong>Offline</strong></span>
-      </li>
-      <li>
-        Machine 1 <span>Status: <strong>Online</strong></span>
-      </li>
-      <li>
-        Machine 1 <span>Status: <strong>Offline</strong></span>
-      </li>
-    </ul>
   </body>
 </html>

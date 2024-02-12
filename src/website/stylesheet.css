@@ -4,7 +4,7 @@ body {
   }
   
   #section1 {
-    background-color: lightgray;
+    background-color: white;
     padding: 20px;
   }
   
@@ -12,6 +12,7 @@ body {
   table {
     width: 100%;
     border-collapse: collapse;
+    border-radius: 20px;
     margin-top: 10px;
   }
   
@@ -22,19 +23,29 @@ body {
   }
   
   th {
-    background-color: #f2f2f2;
+    background-color: lightgrey;
   }
   
+  form {
+    display: block;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+
   /* Styling für den Button */
   button {
-    background-color: #4CAF50;
+    background-color: lightsalmon;
     color: white;
-    padding: 10px;
+    padding: 8px;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
   }
   
   button:hover {
-    background-color: #45a049;
+    background-color: salmon;
   }
   
