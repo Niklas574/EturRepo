@@ -19,6 +19,5 @@ function printCustomers(customers)
 {
     return customers;
 }
-printCustomers(customers);
 
 export {printCustomers};
