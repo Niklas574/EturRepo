@@ -1,74 +1,81 @@
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <nav>
-      <ul>
-        <li><a href="etur.html">Home</a></li>
-          <li><a href="reports.html">Reports</a></li>
-          <li><a href="kunden.html">Kunden</a></li>
-      </ul>
-  </nav>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kundenmanagement</title>
-  </head>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
 
-  <body>
+<body>
+    <header>
+        <h1>Kundenmanagement</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="etur.html">Home</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="kunden.html">Kunden</a></li>
+        </ul>
+    </nav>
 
-    <div id="section1">
-        <h2>Kunden</h2>
+    <div class="container">
+        <section id="section1">
+            <h2>Kunden</h2>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Kundennummer</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                  <td>Customer 1</td>
-                  <td>K12345</td>
-                </tr>
-                <tr>
-                  <td>Customer 2</td>
-                  <td>K67890</td>
-                </tr>
-                <tr>
-                  <td>Customer 3</td>
-                  <td>K98765</td>
-                </tr>
-              </tbody>
-        </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Kundennummer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Customer 1</td>
+                        <td>K12345</td>
+                    </tr>
+                    <tr>
+                        <td>Customer 2</td>
+                        <td>K67890</td>
+                    </tr>
+                    <tr>
+                        <td>Customer 3</td>
+                        <td>K98765</td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <form id="addCustomerForm">
-          <label for="customerName">Name:</label>
-          <input type="text" id="customerName" name="customerName" required>
-    
-          <label for="customerAge">Alter:</label>
-          <input type="text" id="customerAge" name="customerAge" required>
+            <form id="addCustomerForm">
+                <label for="customerName">Name:</label>
+                <input type="text" id="customerName" name="customerName" required>
 
-          <label for="customerEmail">E-Mail:</label>
-          <input type="text" id="customerEmail" name="customerEmail" required>
+                <label for="customerAge">Alter:</label>
+                <input type="text" id="customerAge" name="customerAge" required>
 
-          <label for="customerPhoneNumber">Telefonnummer:</label>
-          <input type="text" id="customerPhoneNumber" name="customerPhoneNumber" required>
+                <label for="customerEmail">E-Mail:</label>
+                <input type="text" id="customerEmail" name="customerEmail" required>
 
-          <label for="customerNumber">Kundennummer:</label>
-          <input type="text" id="customerNumber" name="customerNumber" required>
-    
-          <button id="button1" onclick="alert('Kunde hinzugefügt.')">Hinzufügen</button>
-        </form>
+                <label for="customerPhoneNumber">Telefonnummer:</label>
+                <input type="text" id="customerPhoneNumber" name="customerPhoneNumber" required>
 
-        <form id="checkCustomerNumberForm">
-          <label for="customerNumber">Kundennummer:</label>
-          <input type="text" id="customerNumber" name="customerNumber" required>
-    
-          <button id="button2" onclick="alert('Suchen')">Suchen</button>
-        </form>
-        
-      </div>
-    
-      <script src="javascript.js"></script>
-  </body>
+                <label for="customerNumber">Kundennummer:</label>
+                <input type="text" id="customerNumber" name="customerNumber" required>
+
+                <button id="button1" onclick="alert('Kunde hinzugefügt.')">Hinzufügen</button>
+            </form>
+
+            <form id="checkCustomerNumberForm">
+                <label for="customerNumber">Kundennummer:</label>
+                <input type="text" id="customerNumber" name="customerNumber" required>
+
+                <button id="button2" onclick="alert('Suchen')">Suchen</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="javascript.js"></script>
+</body>
+
 </html>
