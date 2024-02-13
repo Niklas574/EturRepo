@@ -1,56 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reports</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <style>
-        /* Styling für die Navigation */
-        nav {
-            padding: 10px;
-            position: fixed;
-            top: 0;
-            right: 20px; /* Anpassung der Position nach rechts */
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: rgb(0, 0, 0);
-            font-weight: bold;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
-<body>
+
+<<body>
     <header>
+        <nav>
+            <ul>
+                <li><a href="etur.html">Home</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="kunden.html">Kunden</a></li>
+            </ul>
+        </nav>
         <h1>Reports</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="etur.html">Home</a></li>
-            <li><a href="reports.html">Reports</a></li>
-            <li><a href="kunden.html">Kunden</a></li>
-        </ul>
-    </nav>
 
     <div id="section1">
         <h2>Reports</h2>
-        <!-- Hier kannst du den Inhalt für die Reports-Seite einfügen -->
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Kategorie</th>
+                    <th>Kundennummer</th>
+                    <th>Beschreibung</th>
+                    <th>Status</th>
+                    <!-- Füge hier weitere Spalten nach Bedarf hinzu -->
+                </tr>
+            </thead>
+            <tbody id="reportTableBody">
+                <!-- Hier werden die Reportzeilen eingefügt -->
+            </tbody>
+        </table>
+        <!-- Formular zum Erstellen eines neuen Reports -->
+      <form id="addReportForm">
+        <label for="reportCategory">Kategorie:</label>
+        <input type="text" id="reportCategory" name="reportCategory" required>
+
+        <label for="reportCustomerId">Kundennummer:</label>
+        <input type="text" id="reportCustomerId" name="reportCustomerId" required>
+
+        <label for="reportDescription">Beschreibung:</label>
+        <input type="text" id="reportDescription" name="reportDescription" required>
+
+        <!-- Weitere Felder entsprechend dem Datenmodell hinzufügen -->
+
+        <button id="addReportButton">Report erstellen</button>
+      </form>
+
+      <!-- Formular zum Aktualisieren eines bestehenden Reports -->
+      <form id="updateReportForm">
+        <label for="updateReportId">Report ID zum Aktualisieren:</label>
+        <input type="text" id="updateReportId" name="updateReportId" required>
+
+        <!-- Weitere Felder zum Aktualisieren hinzufügen -->
+
+        <button id="updateReportButton">Report aktualisieren</button>
+      </form>
+
+      <!-- Hier könnten auch andere Abschnitte, z. B. Anzeige von Reports, eingefügt werden -->
+    </section>
+  
     </div>
 
     <script src="javascript.js"></script>

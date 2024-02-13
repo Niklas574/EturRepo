@@ -3,22 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kundenmanagement</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 
 <body>
     <header>
+        <nav>
+            <ul>
+                <li><a href="etur.html">Home</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="kunden.html">Kunden</a></li>
+            </ul>
+        </nav>
         <h1>Kundenmanagement</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="etur.html">Home</a></li>
-            <li><a href="reports.html">Reports</a></li>
-            <li><a href="kunden.html">Kunden</a></li>
-        </ul>
-    </nav>
+    
 
     <div class="container">
         <section id="section1">
@@ -28,22 +28,14 @@
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Alter</th>
+                        <th>E-Mail</th>
+                        <th>Telefonnummer</th>
                         <th>Kundennummer</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Customer 1</td>
-                        <td>K12345</td>
-                    </tr>
-                    <tr>
-                        <td>Customer 2</td>
-                        <td>K67890</td>
-                    </tr>
-                    <tr>
-                        <td>Customer 3</td>
-                        <td>K98765</td>
-                    </tr>
+                <tbody id="customerTableBody">
+                    <!-- Hier werden die Kundenzeilen eingefügt -->
                 </tbody>
             </table>
 
@@ -63,14 +55,20 @@
                 <label for="customerNumber">Kundennummer:</label>
                 <input type="text" id="customerNumber" name="customerNumber" required>
 
-                <button id="button1" onclick="alert('Kunde hinzugefügt.')">Hinzufügen</button>
+                <button id="button1">Hinzufügen</button>
             </form>
 
             <form id="checkCustomerNumberForm">
                 <label for="customerNumber">Kundennummer:</label>
                 <input type="text" id="customerNumber" name="customerNumber" required>
 
-                <button id="button2" onclick="alert('Suchen')">Suchen</button>
+                <button id="button2">Suchen</button>
+            </form>
+
+            <form id="deleteCustomerForm">
+                <label for="deleteCustomerNumber">Kundennummer zum Löschen:</label>
+                <input type="text" id="deleteCustomerNumber" name="deleteCustomerNumber" required>
+                <button id="buttonDeleteCustomer">Löschen</button>
             </form>
         </section>
     </div>

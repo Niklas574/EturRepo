@@ -1,30 +1,18 @@
-const report = {
-    id: '2412',
-    category: "Feedback",
-    customerId: "1234",
-    description: "This is a description",
-    labels: ["label1", "label2"],
-    owner: "Product Manager",
-    assignedTo: "Jens Reiner",
-    createdAt: "2020-01-01:12:00:00",
-    editedAt: "2020-01-01:12:00:00",
-    closedAt: "2020-01-01:12:00:00",
-    state: "Open",
-    priority: 1,
-    comments: [
-      {
-        author: "Jens Reiner",
-        message: "This is a comment",
-        createdAt: "2020-01-01:12:00:00",
-        type: 'developer',
-      },
-    ],
-    closeReason: "This is a close reason",
-    references: [
-      {
-        type: "github",
-        url: "",
-        issueNumber: 1
-      }
-    ]
-  };
+// reportFunctions.js
+import reportModel from './reportModel';
+
+function createReport() {
+  // Implementiere die Logik zur Erstellung eines neuen Reports
+  const newReport = { ...reportModel };
+  return newReport;
+}
+
+function updateReport(report, updatedData) {
+  // Implementiere die Logik zur Aktualisierung eines Reports
+  const updatedReport = { ...report, ...updatedData };
+  return updatedReport;
+}
+
+// Weitere Funktionen nach Bedarf...
+
+export { createReport, updateReport };

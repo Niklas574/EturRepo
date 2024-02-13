@@ -22,7 +22,7 @@ function printCustomers()
 }
 
 function createCustomer(newCustomer) {
-    customers.push(newCustomer); //doof
+    customers.push(newCustomer);
 }
 
 function getCustomerWithId(customerNumber)
@@ -34,7 +34,7 @@ function getCustomerWithId(customerNumber)
 function deleteCustomer(index)
 {
     console.log(index);
-    delete customers[index];
+    customers.splice(index, 1); // Verwende splice, um den Kunden aus dem Array zu entfernen
 }
 
 function getRandomInt(min, max) {
@@ -66,31 +66,32 @@ function validCustomerNumber(customerNumber)
 
 export async function GetCustomers (fastify, options) {
     fastify.get('/customers', async (request, reply) => {
-      return customers;
+        return customers;
     });
-  };
+};
 
 export async function GetCustomer (fastify, options) {
-fastify.get('/customers/:id', async (request, reply) => {
-    const id = request.params.id;
-    return customers[id];
-});
+    fastify.get('/customers/:id', async (request, reply) => {
+        const id = request.params.id;
+        return customers[id];
+    });
 }
 
 export async function PostCustomer (fastify, options) {
-fastify.post('/customers', async (request, reply) => {
-    const newCustomer = request.body;
-    await createCustomer(newCustomer);
-    return newCustomer;
-});
+    fastify.post('/customers', async (request, reply) => {
+        const newCustomer = request.body;
+        await createCustomer(newCustomer);
+        return newCustomer;
+    });
 }
 
 export async function DeleteCustomer (fastify, options) {
-fastify.delete('/customers/:id', async (request, reply) => {
-    const id = request.params.id;
-    await deleteCustomer(id);
-    return "Customer deleted!";
-});
+    fastify.delete('/customers/:id', async (request, reply) => {
+        const id = request.params.id;
+        const index = parseInt(id); // Konvertiere die Kundennummer in eine Ganzzahl
+        deleteCustomer(index);
+        return "Customer deleted!";
+    });
 }
 
-export {printCustomers, createCustomer, getCustomerWithId, deleteCustomer, getRandomInt, validCustomerNumber};
+export { printCustomers, createCustomer, getCustomerWithId, deleteCustomer, getRandomInt, validCustomerNumber };
