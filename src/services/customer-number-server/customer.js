@@ -73,25 +73,30 @@ function validCustomerNumber(customerNumber)
 
 export async function routes (fastify, options) {
     fastify.get('/customers', async (request, reply) => {
-      // do something ´
+      return customers;
     });
   };
 
   export async function routes (fastify, options) {
     fastify.get('/customers/:id', async (request, reply) => {
-      // do something ´
+        const id = request.params.id;
+        return customers[id];
     });
   }
 
   export async function routes (fastify, options) {
     fastify.post('/customers', async (request, reply) => {
-      // do something ´
+        const newCustomer = request.body;
+        await createCustomer(newCustomer);
+        return newCustomer;
     });
   }
 
   export async function routes (fastify, options) {
-    fastify.delete('/customer/:id', async (request, reply) => {
-      // do something ´
+    fastify.delete('/customers/:id', async (request, reply) => {
+        const id = request.params.id;
+        await deleteCustomer(id);
+        return "Customer deleted!";
     });
   }
 
