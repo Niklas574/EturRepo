@@ -40,3 +40,6 @@ document.getElementById('button1').addEventListener('click', function() {
         console.error('Fehler beim Hinzufügen des Kunden:', error);
     });
 });
+
+
+console.log()
