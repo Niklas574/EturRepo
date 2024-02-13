@@ -27,22 +27,27 @@ fastify.register(GetCustomers);
 fastify.register(PostCustomer);
 fastify.register(DeleteCustomer);
 
-
 // Event Listener für den "Hinzufügen"-Button
 document.getElementById('button1').addEventListener('click', async function() {
     // Daten aus den Input-Feldern abrufen
     let customerName = document.getElementById('customerName').value;
+    let customerAge = document.getElementById('customerAge').value;
+    let customerEmail = document.getElementById('customerEmail').value;
+    let customerPhoneNumber = document.getElementById('customerPhoneNumber').value;
     let customerNumber = document.getElementById('customerNumber').value;
 
     // Daten für den HTTP-Aufruf vorbereiten
     let requestData = {
         name: customerName,
+        age: customerAge,
+        email: customerEmail,
+        phoneNumber: customerPhoneNumber,
         customerNumber: customerNumber
     };
 
     // HTTP-Aufruf über Fetch API an den Server
     try {
-        const response = await fetch('deine-api-endpoint', {
+        const response = await fetch('/customers', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
