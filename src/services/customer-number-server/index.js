@@ -6,13 +6,6 @@ const fastify = Fastify({
     logger: true
 })
 
-try{
-    await fastify.listen(4040);
-} catch (err) {
-    fastify.log.error(err);
-    process.exit(1);
-}
- 
 const getOptions = {
     schema: {
         response: {
@@ -30,6 +23,17 @@ const getOptions = {
 fastify.get("/Kunden", getOptions, (request, reply) => {
     reply.send({ hello: "world"});
 });
+
+try{
+    await fastify.listen(4040);
+} catch (err) {
+    fastify.log.error(err);
+    process.exit(1);
+}
+ 
+
+
+
 
 import {printCustomers, createCustomer, getCustomerWithId, deleteCustomer, getRandomInt} from './customer.js'
 
