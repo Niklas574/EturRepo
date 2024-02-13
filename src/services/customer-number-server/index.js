@@ -11,7 +11,7 @@ const fastify = Fastify({
 //         response: {
 //             200: {
 //                 type: "object",
-//                 proberties: {
+//                 properties: {
 //                     hello: { type: "string" },
 
 //                 },
@@ -20,7 +20,34 @@ const fastify = Fastify({
 //     },
 // };
 
+export async function GetCustomers (fastify, options) {
+    fastify.get('/customers', async (request, reply) => {
+      return customers;
+    });
+  };
 
+export async function GetCustomer (fastify, options) {
+fastify.get('/customers/:id', async (request, reply) => {
+    const id = request.params.id;
+    return customers[id];
+});
+}
+
+export async function PostCustomer (fastify, options) {
+fastify.post('/customers', async (request, reply) => {
+    const newCustomer = request.body;
+    await createCustomer(newCustomer);
+    return newCustomer;
+});
+}
+
+export async function DeleteCustomer (fastify, options) {
+fastify.delete('/customers/:id', async (request, reply) => {
+    const id = request.params.id;
+    await deleteCustomer(id);
+    return "Customer deleted!";
+});
+}
 
 try{
     await fastify.listen(4040);
@@ -34,14 +61,12 @@ try{
 
 
 import {printCustomers, createCustomer, getCustomerWithId, deleteCustomer, getRandomInt} from './customer.js'
-import { routes } from './customers.js'
-// Other code...
-fastify.register(routes);
 
 
-createCustomer("Justin", 22, "justin@gmail.com", "01234567", "ETUR-CN-3" );
-createCustomer("David", 18, "david@gmail.com", "1234567", "ETUR-CN-4");
-console.log(printCustomers());
-console.log("---------");
-deleteCustomer(getRandomInt(0,4));
-console.log(printCustomers());
+
+// createCustomer("Justin", 22, "justin@gmail.com", "01234567", "ETUR-CN-3" );
+// createCustomer("David", 18, "david@gmail.com", "1234567", "ETUR-CN-4");
+// console.log(printCustomers());
+// console.log("---------");
+// deleteCustomer(getRandomInt(0,4));
+// console.log(printCustomers());
