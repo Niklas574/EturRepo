@@ -6,23 +6,21 @@ const fastify = Fastify({
     logger: true
 })
 
-const getOptions = {
-    schema: {
-        response: {
-            200: {
-                type: "object",
-                proberties: {
-                    hello: { type: "string" },
+// const getOptions = {
+//     schema: {
+//         response: {
+//             200: {
+//                 type: "object",
+//                 proberties: {
+//                     hello: { type: "string" },
 
-                },
-            },
-        },
-    },
-};
+//                 },
+//             },
+//         },
+//     },
+// };
 
-fastify.get("/Kunden", getOptions, (request, reply) => {
-    reply.send({ hello: "world"});
-});
+
 
 try{
     await fastify.listen(4040);
@@ -36,7 +34,9 @@ try{
 
 
 import {printCustomers, createCustomer, getCustomerWithId, deleteCustomer, getRandomInt} from './customer.js'
-
+import { routes } from './customers.js'
+// Other code...
+fastify.register(routes);
 
 
 createCustomer("Justin", 22, "justin@gmail.com", "01234567", "ETUR-CN-3" );

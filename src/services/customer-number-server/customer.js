@@ -70,4 +70,31 @@ function validCustomerNumber(customerNumber)
         return false;
     }
 }
+
+export async function routes (fastify, options) {
+    fastify.get('/customers', async (request, reply) => {
+      // do something ´
+    });
+  };
+
+  export async function routes (fastify, options) {
+    fastify.get('/customers/:id', async (request, reply) => {
+      // do something ´
+    });
+  }
+
+  export async function routes (fastify, options) {
+    fastify.post('/customers', async (request, reply) => {
+      // do something ´
+    });
+  }
+
+  export async function routes (fastify, options) {
+    fastify.delete('/customer/:id', async (request, reply) => {
+      // do something ´
+    });
+  }
+
+  
+
 export {printCustomers, createCustomer, getCustomerWithId, deleteCustomer, getRandomInt, validCustomerNumber};
