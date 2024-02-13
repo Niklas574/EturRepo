@@ -9,8 +9,8 @@ import {printCustomers, createCustomer, getCustomerWithId, deleteCustomer, getRa
 //console.log("-------------");
 //console.log(printCustomers());
 
-createCustomer("Justin", 22, "justin@gmail.com", "01234567", "K0003" );
-createCustomer("David", 18, "david@gmail.com", "1234567", "K0004");
+createCustomer("Justin", 22, "justin@gmail.com", "01234567", "ETUR-CN-3" );
+createCustomer("David", 18, "david@gmail.com", "1234567", "ETUR-CN-4");
 console.log(printCustomers());
 console.log("---------");
 deleteCustomer(getRandomInt(0,4));

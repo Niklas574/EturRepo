@@ -3,7 +3,7 @@ const customer1 = {
     age: 22, 
     email: "sara@gmail.com", 
     phoneNumber: "015110284253", 
-    customerNumber: "K0001"
+    customerNumber: "ETUR-CN-1"
 }
 
 const customer2 = {
@@ -11,7 +11,7 @@ const customer2 = {
     age: 16, 
     email: "niklas@gmail.com", 
     phoneNumber: "015752781728", 
-    customerNumber: "K0002"
+    customerNumber: "ETUR-CN-2"
 }
 
 const customers = [customer1, customer2];
@@ -38,10 +38,10 @@ function getCustomerWithId(customerNumber)
     return filteredResult
 }
 
-function deleteCustomer(id)
+function deleteCustomer(index)
 {
-    console.log(id);
-    delete customers[id];
+    console.log(index);
+    delete customers[index];
 }
 
 function getRandomInt(min, max) {
