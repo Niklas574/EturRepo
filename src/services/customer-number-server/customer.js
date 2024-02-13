@@ -60,6 +60,14 @@ function validCustomerNumber(customerNumber)
         {
             return true;
         }
+        else
+        {
+            return false;
+        }
+    }
+    else
+    {
+        return false;
     }
 }
 export {printCustomers, createCustomer, getCustomerWithId, deleteCustomer, getRandomInt, validCustomerNumber};
