@@ -27,6 +27,43 @@ fastify.register(GetCustomers);
 fastify.register(PostCustomer);
 fastify.register(DeleteCustomer);
 
+
+// Event Listener für den "Hinzufügen"-Button
+document.getElementById('button1').addEventListener('click', async function() {
+    // Daten aus den Input-Feldern abrufen
+    let customerName = document.getElementById('customerName').value;
+    let customerNumber = document.getElementById('customerNumber').value;
+
+    // Daten für den HTTP-Aufruf vorbereiten
+    let requestData = {
+        name: customerName,
+        customerNumber: customerNumber
+    };
+
+    // HTTP-Aufruf über Fetch API an den Server
+    try {
+        const response = await fetch('deine-api-endpoint', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestData)
+        });
+
+        if (response.ok) {
+            // Erfolgreiche Antwort verarbeiten
+            const responseData = await response.json();
+            alert('Kunde erfolgreich hinzugefügt: ' + JSON.stringify(responseData));
+        } else {
+            // Fehler verarbeiten
+            console.error('Fehler beim Hinzufügen des Kunden:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Fehler beim Hinzufügen des Kunden:', error);
+    }
+});
+
+
 try{
     await fastify.listen(4040);
 } catch (err) {

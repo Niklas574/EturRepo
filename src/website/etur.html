@@ -38,21 +38,30 @@
           <label for="customerName">Name:</label>
           <input type="text" id="customerName" name="customerName" required>
     
+          <label for="customerAge">Alter:</label>
+          <input type="text" id="customerAge" name="customerAge" required>
+
+          <label for="customerEmail">E-Mail:</label>
+          <input type="text" id="customerEmail" name="customerEmail" required>
+
+          <label for="customerPhoneNumber">Telefonnummer:</label>
+          <input type="text" id="customerPhoneNumber" name="customerPhoneNumber" required>
+
           <label for="customerNumber">Kundennummer:</label>
           <input type="text" id="customerNumber" name="customerNumber" required>
     
-          <button onclick="alert('Kunde hinzugefügt.')">Hinzufügen</button>
+          <button id="button1" onclick="alert('Kunde hinzugefügt.')">Hinzufügen</button>
         </form>
 
         <form id="checkCustomerNumberForm">
           <label for="customerNumber">Kundennummer:</label>
           <input type="text" id="customerNumber" name="customerNumber" required>
     
-          <button onclick="alert('Suchen')">Suchen</button>
+          <button id="button2" onclick="alert('Suchen')">Suchen</button>
         </form>
         
       </div>
     
-      <script src="script.js"></script>
+      <script src="index.js"></script>
   </body>
 </html>
