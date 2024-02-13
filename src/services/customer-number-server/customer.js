@@ -37,4 +37,10 @@ function getCustomerWithId(customerNumber)
     const filteredResult = customers.find((obj) => obj.customerNumber == customerNumber);
     return filteredResult
 }
-export {printCustomers, createCustomer, getCustomerWithId};
+
+function deleteCustomer(customerNumber)
+{
+    const customer = getCustomerWithId(customerNumber)
+    customers.pop(customer);
+}
+export {printCustomers, createCustomer, getCustomerWithId, deleteCustomer};
