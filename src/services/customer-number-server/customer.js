@@ -31,4 +31,10 @@ function createCustomer(name, age, email, phoneNumber, customerNumber) {
 };
     customers.push(newCustomer);
 }
-export {printCustomers, createCustomer};
+
+function getCustomerWithId(customerNumber)
+{
+    const filteredResult = customers.find((obj) => obj.customerNumber == customerNumber);
+    return filteredResult
+}
+export {printCustomers, createCustomer, getCustomerWithId};
