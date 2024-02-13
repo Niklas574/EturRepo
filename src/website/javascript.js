@@ -17,7 +17,7 @@ document.getElementById('button1').addEventListener('click', function() {
     };
 
     // HTTP-Aufruf über Fetch API an den Server
-    fetch('/customers', {
+    fetch('http://localhost:4040/customers', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
