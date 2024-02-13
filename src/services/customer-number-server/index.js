@@ -20,34 +20,12 @@ const fastify = Fastify({
 //     },
 // };
 
-export async function GetCustomers (fastify, options) {
-    fastify.get('/customers', async (request, reply) => {
-      return customers;
-    });
-  };
+import { GetCustomer, GetCustomers, PostCustomer, DeleteCustomer } from './customer.js'
 
-export async function GetCustomer (fastify, options) {
-fastify.get('/customers/:id', async (request, reply) => {
-    const id = request.params.id;
-    return customers[id];
-});
-}
-
-export async function PostCustomer (fastify, options) {
-fastify.post('/customers', async (request, reply) => {
-    const newCustomer = request.body;
-    await createCustomer(newCustomer);
-    return newCustomer;
-});
-}
-
-export async function DeleteCustomer (fastify, options) {
-fastify.delete('/customers/:id', async (request, reply) => {
-    const id = request.params.id;
-    await deleteCustomer(id);
-    return "Customer deleted!";
-});
-}
+fastify.register(GetCustomer);
+fastify.register(GetCustomers);
+fastify.register(PostCustomer);
+fastify.register(DeleteCustomer);
 
 try{
     await fastify.listen(4040);
