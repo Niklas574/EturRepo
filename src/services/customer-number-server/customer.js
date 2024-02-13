@@ -38,9 +38,28 @@ function getCustomerWithId(customerNumber)
     return filteredResult
 }
 
-function deleteCustomer(customerNumber)
+function deleteCustomer(id)
 {
-    const customer = getCustomerWithId(customerNumber)
-    customers.pop(customer);
+    console.log(id);
+    delete customers[id];
 }
-export {printCustomers, createCustomer, getCustomerWithId, deleteCustomer};
+
+function getRandomInt(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
+}
+
+function validCustomerNumber(customerNumber)
+{
+    const pattern = /ETUR-CN-\w+/;
+    const isValid = pattern.test(customerNumber)
+    if (isValid)
+    {
+        if (customers.includes(customerNumber))
+        {
+            return true;
+        }
+    }
+}
+export {printCustomers, createCustomer, getCustomerWithId, deleteCustomer, getRandomInt, validCustomerNumber};
