@@ -164,7 +164,7 @@ function displayReportInTable(report) {
         <td>${report.category}</td>
         <td>${report.customerId}</td>
         <td>${report.description}</td>
-        <td>${report.status}</td>
+        <td>${report.labels}</td>
         <!-- Füge hier weitere Spalten hinzu, wenn nötig -->
     `;
 
@@ -177,7 +177,7 @@ document.getElementById('buttonAddReport').addEventListener('click', function ()
     let customerId = document.getElementById('reportCustomerId').value;
     let description = document.getElementById('reportDescription').value;
 
-    // Daten für den HTTP-Aufruf vorbereiten (ersetze dies durch deine eigenen Felder)
+    // Daten für den HTTP-Aufruf vorbereiten 
     let requestData = {
         category: category,
         customerId: customerId,
