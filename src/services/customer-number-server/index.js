@@ -31,7 +31,7 @@ try {
     process.exit(1);
 }
 
-// import { printCustomers, createCustomer, getCustomerWithId, deleteCustomer, getRandomInt } from './customer.js';
+///import { printCustomers, createCustomer, getCustomerWithId, deleteCustomer, getRandomInt } from './customer.js';
 
 // createCustomer("Justin", 22, "justin@gmail.com", "01234567", "ETUR-CN-3");
 // createCustomer("David", 18, "david@gmail.com", "1234567", "ETUR-CN-4");

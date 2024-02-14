@@ -3,7 +3,7 @@ const report1 = {
   category: "Feedback",
   customerId: "ETUR-CN-34",
   description: "Alles läuft wie erwartet.",
-  labels: ["In Bearbeitung"],
+  labels: ["Label1"],
   owner: "Product Manager",
   assignedTo: "Jens Reiner",
   createdAt: "2020-01-01:12:00:00",
@@ -131,7 +131,8 @@ function createReport(newReport) {
 export async function PostReport (fastify, options) {
   fastify.post('/reports', async (request, reply) => {
     let newReport = request.body;
-    newReport.id = reports[length -1].id + 1;
+    newReport.id = 1 + Math.floor(reports[reports.length -1].id);
+    newReport.state = "Neu";
     await createReport(newReport);
     return newReport;
   });

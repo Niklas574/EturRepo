@@ -41,4 +41,5 @@ document.getElementById('buttonAddReport').addEventListener('click', function ()
             // Fehler verarbeiten
             console.error('Fehler beim Hinzufügen des Reports:', error);
         });
+        console.log("done");
 });
