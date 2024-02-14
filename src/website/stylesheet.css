@@ -34,6 +34,29 @@ nav a {
   padding: 20px;
 }
 
+/* Neue CSS-Regeln für das Login-Formular */
+#loginForm {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-top: 50px;
+}
+
+#loginForm label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#loginForm input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
