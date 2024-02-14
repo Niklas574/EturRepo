@@ -38,7 +38,8 @@ function createReport(newReport) {
 
 export async function PostReport (fastify, options) {
   fastify.post('/reports', async (request, reply) => {
-    const newReport = request.body;
+    let newReport = request.body;
+    newReport.id = reports[length -1].id + 1;
     await createReport(newReport);
     return newReport;
   });
