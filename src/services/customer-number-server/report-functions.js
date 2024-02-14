@@ -10,7 +10,7 @@ const report1 = {
   editedAt: "2020-01-01:12:00:00",
   closedAt: "2020-01-01:12:00:00",
   state: "Open",
-  priority: 1
+  priority: 1,
   comments: [
     {
       author: "Jens Reiner",
@@ -32,17 +32,30 @@ const report1 = {
 
 const reports = [report1];
 
-function createCustomer(newReport) {
+function createReport(newReport) {
   reports.push(newReport);
 }
 
-  
-function updateReport(report, updatedData) {
-  // Implementiere die Logik zur Aktualisierung eines Reports
-  const updatedReport = { ...report, ...updatedData };
-  return updatedReport;
+export async function PostReport (fastify, options) {
+  fastify.post('/reports', async (request, reply) => {
+    const newReport = request.body;
+    await createReport(newReport);
+    return newReport;
+  });
 }
 
-// Weitere Funktionen nach Bedarf...
+export async function GetReports (fastify, options) {
+  fastify.get('/reports', async (request, reply) => {
+    return reports;
+  });
+}
+  
+// function updateReport(report, updatedData) {
+//   // Implementiere die Logik zur Aktualisierung eines Reports
+//   const updatedReport = { ...report, ...updatedData };
+//   return updatedReport;
+// }
 
-export { createReport, updateReport };
+// Weitere Funktionen nach Bedarf
+
+export { createReport};

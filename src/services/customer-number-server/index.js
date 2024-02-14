@@ -11,26 +11,16 @@ fastify.register(cors, {
 });
 
 import { GetCustomer, GetCustomers, PostCustomer, DeleteCustomer } from './customer.js';
+import { GetReports} from './report-functions.js';
 
 fastify.register(GetCustomer);
 fastify.register(GetCustomers);
 fastify.register(PostCustomer);
 fastify.register(DeleteCustomer);
 
-// Neuer Endpunkt zum Erstellen eines Reports
-fastify.post('/reports', (request, reply) => {
-    const newReport = createReport();
-    reply.send(newReport);
-  });
-  
-  // Neuer Endpunkt zum Aktualisieren eines Reports anhand der ID
-  fastify.put('/reports/:id', (request, reply) => {
-    const reportId = request.params.id;
-    const updatedData = request.body;
-    const existingReport = getReportById(reportId);
-    const updatedReport = updateReport(existingReport, updatedData);
-    reply.send(updatedReport);
-  });
+fastify.register(GetReports);
+
+
   
 try {
     await fastify.listen(4040);
