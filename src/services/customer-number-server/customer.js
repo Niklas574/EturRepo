@@ -1,3 +1,5 @@
+import fastify from "fastify";
+
 const customer1 = {
     name: "Sara", 
     age: 22, 
@@ -94,4 +96,18 @@ export async function DeleteCustomer (fastify, options) {
     });
 }
 
-export { printCustomers, createCustomer, getCustomerWithId, deleteCustomer, getRandomInt, validCustomerNumber };
+export async function ValidateCustomer (){
+    fastify.get('/customers/:id/validate', async (request, reply) => {
+        const id = request.params.id;
+        const customer = getCustomerWithId(id);
+        if (!customer == undefined)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    })
+}
+export { printCustomers, createCustomer, getCustomerWithId, deleteCustomer, getRandomInt, validCustomerNumber, ValidateCustomer };

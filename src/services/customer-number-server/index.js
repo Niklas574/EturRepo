@@ -10,13 +10,14 @@ fastify.register(cors, {
     origin: '*'
 });
 
-import { GetCustomer, GetCustomers, PostCustomer, DeleteCustomer } from './customer.js';
+import { GetCustomer, GetCustomers, PostCustomer, DeleteCustomer, ValidateCustomer} from './customer.js';
 import { GetReport, GetReports, PostReport } from './open-report-functions.js';
 
 fastify.register(GetCustomer);
 fastify.register(GetCustomers);
 fastify.register(PostCustomer);
 fastify.register(DeleteCustomer);
+fastify.register(ValidateCustomer);
 
 fastify.register(GetReport);
 fastify.register(GetReports);
