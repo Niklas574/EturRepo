@@ -1,28 +1,42 @@
-// reportFunctions.js
-import reportModel from './reportModel';
+const report1 = {
+  id: '2412',
+  category: "Feedback",
+  customerId: "1234",
+  description: "This is a description",
+  labels: ["label1", "label2"],
+  owner: "Product Manager",
+  assignedTo: "Jens Reiner",
+  createdAt: "2020-01-01:12:00:00",
+  editedAt: "2020-01-01:12:00:00",
+  closedAt: "2020-01-01:12:00:00",
+  state: "Open",
+  priority: 1
+  comments: [
+    {
+      author: "Jens Reiner",
+      message: "This is a comment",
+      createdAt: "2020-01-01:12:00:00",
+      type: 'developer',
+    },
+  ],
+  closeReason: "This is a close reason",
+  references: [
+    {
+      type: "github",
+      url: "",
+      issueNumber: 1
+    }
+  ]
+};
 
-function createReport() {
-  // Implementiere die Logik zur Erstellung eines neuen Reports
-  const newReport = {
-    id: generateUniqueId(), // Annahme: Funktion zum Generieren einer eindeutigen ID
-    category: "Feedback",
-    customerId: "1234",
-    description: "",
-    labels: [],
-    owner: "",
-    assignedTo: "",
-    createdAt: getCurrentDateTime(), // Annahme: Funktion für das aktuelle Datum und die Uhrzeit
-    editedAt: "",
-    closedAt: "",
-    state: "Open",
-    priority: 1,
-    comments: [],
-    closeReason: "",
-    references: [],
-  };
-  return newReport;
+
+const reports = [report1];
+
+function createCustomer(newReport) {
+  reports.push(newReport);
 }
 
+  
 function updateReport(report, updatedData) {
   // Implementiere die Logik zur Aktualisierung eines Reports
   const updatedReport = { ...report, ...updatedData };
