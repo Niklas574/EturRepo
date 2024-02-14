@@ -110,4 +110,4 @@ export async function ValidateCustomer (){
         }
     })
 }
-export { printCustomers, createCustomer, getCustomerWithId, deleteCustomer, getRandomInt, validCustomerNumber, ValidateCustomer };
+export { printCustomers, createCustomer, getCustomerWithId, deleteCustomer, getRandomInt, validCustomerNumber };
