@@ -132,7 +132,7 @@ export async function PostReport (fastify, options) {
   fastify.post('/reports', async (request, reply) => {
     let newReport = request.body;
     newReport.id = 1 + Math.floor(reports[reports.length -1].id);
-    newReport.state = "Neu";
+    newReport.state = "Open";
     await createReport(newReport);
     return newReport;
   });
