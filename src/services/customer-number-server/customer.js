@@ -29,7 +29,7 @@ function createCustomer(newCustomer) {
 
 function getCustomerWithId(customerNumber)
 {
-    const filteredResult = customers.find((obj) => obj.customerNumber == customerNumber);
+    const filteredResult = customers.find((obj) => obj.customerNumber === customerNumber);
     return filteredResult
 }
 
@@ -100,7 +100,7 @@ export async function ValidateCustomer (fastify, options){
     fastify.get('/customers/:id/validate', async (request, reply) => {
         const id = request.params.id;
         const customer = getCustomerWithId(id);
-        if (!customer == undefined)
+        if (customer)
         {
             return true;
         }

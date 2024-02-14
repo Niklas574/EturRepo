@@ -26,7 +26,7 @@ function displayReportInTable(report) {
         <td>${report.category}</td>
         <td>${report.customerId}</td>
         <td>${report.description}</td>
-        <td>${report.labels}</td>
+        <td>${report.state}</td>
         <!-- Füge hier weitere Spalten hinzu, wenn nötig -->
     `;
 
