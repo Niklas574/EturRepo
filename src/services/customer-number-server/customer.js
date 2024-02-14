@@ -96,7 +96,7 @@ export async function DeleteCustomer (fastify, options) {
     });
 }
 
-export async function ValidateCustomer (){
+export async function ValidateCustomer (fastify, options){
     fastify.get('/customers/:id/validate', async (request, reply) => {
         const id = request.params.id;
         const customer = getCustomerWithId(id);
