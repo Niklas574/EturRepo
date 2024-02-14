@@ -11,13 +11,14 @@ fastify.register(cors, {
 });
 
 import { GetCustomer, GetCustomers, PostCustomer, DeleteCustomer } from './customer.js';
-import { GetReports, PostReport } from './report-functions.js';
+import { GetReport, GetReports, PostReport } from './report-functions.js';
 
 fastify.register(GetCustomer);
 fastify.register(GetCustomers);
 fastify.register(PostCustomer);
 fastify.register(DeleteCustomer);
 
+fastify.register(GetReport);
 fastify.register(GetReports);
 fastify.register(PostReport);
 
